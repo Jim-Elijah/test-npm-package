@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <video id="video_paly" width="600" height="400" controls src="https://v-cdn.zjol.com.cn/280443.mp4" preload poster="https://ossweb-img.qq.com/images/lol/web201310/skin/big91012.jpg">
+        您的浏览器不支持 video 标签。
+       </video>	
+               
+       <button id="button1">进入画中画</button>
+       <button id="button2">退出画中画</button>
+       <script type="text/javascript">
+       var video = document.getElementById("video_paly");
+       var btn1 = document.getElementById("button1");
+       var btn2 = document.getElementById("button2");
+       btn1.onclick = function(){
+           video.requestPictureInPicture();
+       }
+       btn2.onclick = function(){
+        //    document.exitPictureInPicture();
+       }		
+       video.addEventListener('enterpictureinpicture', function() {
+            console.log("已经进入画中画")
+            video.style.display = 'none'
+       });
+       video.addEventListener('leavepictureinpicture', function() {
+           console.log("已退出画中画模式")
+           video.style.display = 'block'
+       });
+       </script>
+</body>
+</html>

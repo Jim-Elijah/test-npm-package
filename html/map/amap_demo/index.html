@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, user-scalable=no, width=device-width"
+    />
+    <title>CircleMarker</title>
+    <style type="text/css">
+      html,
+      body,
+      #map {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+      .amap-marker .amap-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: #fff;
+      }
+
+      .amap-icon img {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        margin-top: 3px;
+        margin-left: 3px;
+      }
+    </style>
+    <script src="./config.js"></script>
+    <script type="text/javascript">
+      window._AMapSecurityConfig = {
+        securityJsCode: gloableConfig.secretKey,
+      };
+    </script>
+    <script
+      type="text/javascript"
+      src="https://a.amap.com/Loca/static/mock/districts.js"
+    ></script>
+    <script src="https://webapi.amap.com/loader.js"></script>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      AMapLoader.load({
+        //首次调用 load
+        key: gloableConfig.key, //首次load key为必填
+        // version: "1.4.15",
+        // Loca: {
+        //   version: "1.3.2",
+        // },
+      })
+        .then((AMap) => {
+          map = new AMap.Map("map", {
+            zoom: 15,
+            center: [120.585294, 31.299758],
+          });
+
+          var viaMarker = new AMap.Marker({
+            position: new AMap.LngLat(120.585294, 31.299758),
+            // 将一张图片的地址设置为 icon
+            icon: "https://vdata.amap.com/icons/b18/1/2.png",
+            // 设置了 icon 以后，设置 icon 的偏移量，以 icon 的 [center bottom] 为原点
+            offset: new AMap.Pixel(-13, -30),
+          });
+          map.add(viaMarker);
+
+          const marks = [];
+        //   districts.map((item) => {
+        //     console.log("item", item);
+        //     const marker = new AMap.Marker({
+        //       position: item.center.split(","),
+        //       // 将一张图片的地址设置为 icon
+        //       icon: "https://vdata.amap.com/icons/b18/1/2.png",
+        //       // 设置了 icon 以后，设置 icon 的偏移量，以 icon 的 [center bottom] 为原点
+        //       offset: new AMap.Pixel(-13, -30),
+        //     });
+        //     console.log("marker", marker);
+
+        //     marks.push(marker);
+        //   });
+
+          const LngLats = [
+            "120.629249,31.324214",
+            "120.592428,31.314829",
+            "120.872665,31.268621",
+            "120.644613,31.422704",
+            "120.748554,31.305387",
+          ];
+          LngLats.map((item) => {
+            console.log("item", item);
+            const icon = new AMap.Icon({
+              image: "./avatar.svg",
+              size: new AMap.Size(28, 28),
+            });
+            const marker = new AMap.Marker({
+              position: item.split(","),
+              icon,
+              offset: new AMap.Pixel(-13, -30),
+            });
+            console.log("marker", marker);
+            marks.push(marker);
+          });
+          map.add(marks);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    </script>
+    <!-- <script>
+      var map = new AMap.Map("map", {
+        // viewMode: '3D',
+        zoom: 4,
+        center: [120.587313, 31.297032],
+      });
+      for (var i = 0; i < capitals.length; i += 1) {
+        var center = capitals[i].center;
+        var icon = new AMap.Icon({
+          image: "https://vdata.amap.com/icons/b18/1/2.png",
+          size: new AMap.Size(24, 24),
+        });
+        var circleMarker = new AMap.Marker({
+          center: center,
+          //   icon,
+          zIndex: 10,
+          bubble: true,
+          cursor: "pointer",
+          clickable: true,
+          map,
+        });
+      }
+    </script> -->
+  </body>
+</html>

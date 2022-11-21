@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="activity-desc-wrapper">
+        <input
+          type="checkbox"
+          class="toggleInput"
+          id="toggleInput"
+          v-model="isUnFold"
+        />
+        <div class="activity-desc" ref="descBox" id="descBox">
+          <label
+            class="btn"
+            for="toggleInput"
+            v-if="isMoreThan2Line && (!isUnFold || isMoreThan7Line)"
+            >{{ isUnFold ? '展开' : '收起' }}</label
+          >
+          概述文字概述文字概述文字概述文字概
+          述文字概述文字概述文字概述文字概述文字概述文字
+          <label
+            class="btn-no-absolute"
+            for="toggleInput"
+            v-if="isUnFold && !isMoreThan7Line"
+            >收起</label
+          >
+        </div>
+      </div>
+</body>
+</html>

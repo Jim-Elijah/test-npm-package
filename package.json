@@ -1,0 +1,18 @@
+{
+  "name": "test-npm-package",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "http": "^0.0.1-security",
+    "vue": "^3.2.37",
+    "vue3-video-play": "^1.3.1-beta.6",
+    "ws": "^8.10.0"
+  }
+}
