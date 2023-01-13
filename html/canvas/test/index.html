@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="300" height="200"></canvas>
+    <script>
+        const canvas2 = document.querySelector('#canvas')
+        var context = canvas2.getContext('2d');
+        var width = canvas2.width;
+        var height = canvas2.height;
+        // 加载图片素材
+        var img = new Image();
+        img.onload = function () {
+            console.log('load', this);
+            // 先位移坐标到中心
+            context.translate(width / 2, height / 2);
+            // 旋转90度
+            context.rotate(36 * Math.PI / 180);
+            // 此时按照旋转后的尺寸
+            // 把定位中心移动到左上角
+            context.translate(-1 * height / 2, -1 * width / 2);
+            // 绘制图片
+            context.drawImage(this, 0, 0, height, width);
+            // 坐标系还原到初始
+            // context.setTransform(1, 0, 0, 1, 0, 0);
+        };
+        img.src = './img.jpg';
+        console.log('canvas', canvas, img);
+// 登录状态下不会出现这行文字，点击页面右上角一键登录
+    </script>
+</body>
+
+</html>

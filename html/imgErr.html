@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <img src="C:\wqwqw" alt="pic" onerror="this.src='https://meeriad-v3.s3.cn-north-1.amazonaws.com.cn/webApp/avatar/0209.jpg_wh300.jpg'" /> -->
+    <img src="C:\wqwqw" alt="pic" onerror="imgerrorfun()" />
+    <img
+      src="https://meeriad-v3.s3.cn-north-1.amazonaws.com.cn/webApp/avatar/0209.jpg_wh300.jpg"
+      alt="pic"
+    />
+
+    <script>
+      function imgerrorfun() {
+        let img = event.srcElement;
+        img.src =
+          "https://meeriad-v3.s3.cn-north-1.amazonaws.com.cn/webApp/avatar/0209.jpg_wh300.jpg";
+        img.onerror = null;
+      }
+    </script>
+  </body>
+</html>

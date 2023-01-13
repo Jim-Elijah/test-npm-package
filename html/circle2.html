@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .shadow {
+            width: 60px;
+            height: 60px;
+            position: relative;
+            border-radius: 50%;
+            background: conic-gradient(#FFA924 50deg, #F1EFFB 50deg);
+            mask: radial-gradient(transparent 25px, #F1EFFB 26px);
+            -webkit-mask: radial-gradient(transparent 25px, #F1EFFB 26px)
+        }
+
+        /* .shadow::before {
+            content: '';
+            position: absolute;
+            left: 48px;
+            top: 0px;
+            width: 5px;
+            height: 5px;
+            background: #ddff5c;
+            border-radius: 50%;
+        }
+
+        .shadow::after {
+            content: '';
+            position: absolute;
+            left: -1px;
+            top: 44px;
+            width: 8px;
+            height: 8px;
+            background: #85ea8e;
+            border-radius: 50%;
+        } */
+        .shadow1 {
+	width: 100px;
+	height: 100px;
+	position: relative;
+	border-radius: 50%;
+	background: conic-gradient(#ddff5c 0%, #28d4c3 50%, #85ea8e 75%, #1d335c 75%, #1d335c 100%);
+	mask: radial-gradient(transparent 44px, #000 45px);
+  -webkit-mask: radial-gradient(transparent 44px, #000 45px);
+}
+    </style>
+</head>
+
+<body>
+    <div class="shadow"></div>
+
+    <div class="shadow1"></div>
+</body>
+
+</html>

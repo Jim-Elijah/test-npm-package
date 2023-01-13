@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .con {
+      position: relative;
+    }
+    .con1 {
+      width: 66px;
+    height: 66px;
+    border: 4px solid #ddd;
+    border-radius: 50% 50%;
+    position: relative;
+    }
+    .con1 svg {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="con">
+  <svg>
+    <circle cx="100" cy="80" r="30" fill="#fff" stroke-width="6" 
+    style="position: relative;  z-index: 2;"
+     stroke="#FFA924" />
+     <circle cx="100" cy="80" r="30" fill="#fff" stroke-width="6" 
+     style="position: relative;"
+     stroke="#F1EFFB" />
+  </svg>
+</div>
+
+<svg width="100" height="75" viewBox="0,0,100,75" style="border: 1px solid #cd0000">
+  <rect width="100" height="75" fill="yellow" />
+</svg>
+
+<div class="con1">
+  <svg width="66" height="66" viewBox="0,0,66,66">
+    <circle cx="33" cy="33" r="30" fill="#fff" stroke-width="4"
+      style="position: relative; stroke-dasharray: 22px 190px; stroke-dashoffset: 70px" stroke="#FFA924">
+      </circle>
+  </svg>
+</div>
+
+  <svg width="200" height="200" viewBox="0 0 200 200">
+    <circle cx="100" cy="80" r="50" fill="#fff" stroke-width="5"
+      style="position: relative; stroke-dasharray: 50px 260px; stroke-dashoffset: 70px" stroke="green">
+      </circle>
+  </svg>
+
+  <svg width="200" height="200" viewBox="0 0 200 200">
+    <circle cx="100" cy="80" r="50" fill="gray" stroke-width="5"
+      style="stroke-dasharray: 90px 210px; stroke-dashoffset: 60px" stroke="green" />
+  </svg>
+
+</body>
+
+</html>

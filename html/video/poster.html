@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+<video id="video1" src="http://oss.meeriad.chintec.net/fire_eye/recording/dawkins_1670381608252_good.mp4" poster="" preload="auto" controls width="270" >
+</video>
+<div id="output"></div>
+
+<script>
+ function one () {
+ 	var video, output;
+    const radio = 0.6
+	output = document.getElementById("output");
+	var canvas = document.createElement('canvas')
+	var img = document.createElement("img");
+	  video = document.getElementById('video1')
+	  video.setAttribute('crossOrigin', 'anonymous')
+	  canvas.width = video.clientWidth * radio
+	  canvas.height = video.clientHeight * radio
+	  video.onloadeddata = (() => {
+		  canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height)
+		  var dataURL = canvas.toDataURL('image/jpeg', 0.5);
+          console.log('dataURL', dataURL)
+		  img.src = dataURL;
+		  img.width = canvas.width;
+		  img.height = canvas.height;
+		  output.appendChild(img);
+		  video.setAttribute("poster",dataURL);
+	  })
+ }
+	one()
+</script>
+
+</body>
+</html>
